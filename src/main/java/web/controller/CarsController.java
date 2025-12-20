@@ -24,10 +24,4 @@ public class CarsController {
        model.addAttribute("cars", carService.getCarList(count));
        return "cars";
     }
-
-//    @GetMapping()
-//    public String getRestrictedQuantity(@RequestParam(name = "count", required = false, defaultValue = "5") int count, Model model) {
-//        model.addAttribute("cars", carService.getRestrictedQuantity(count));
-//        return "cars";
-//    }
 }
