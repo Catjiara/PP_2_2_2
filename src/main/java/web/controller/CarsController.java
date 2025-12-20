@@ -20,14 +20,14 @@ public class CarsController {
    }
 
     @GetMapping()
-    public String getAll(Model model) {
-       model.addAttribute("cars", carService.getAll());
+    public String getCarList(@RequestParam(name = "count", required = false, defaultValue = "0") int count, Model model) {
+       model.addAttribute("cars", carService.getCarList(count));
        return "cars";
     }
 
-    @GetMapping()
-    public String getRestrictedQuantity(@RequestParam(name = "count", required = false, defaultValue = "5") int count, Model model) {
-        model.addAttribute("cars", carService.getRestrictedQuantity(count));
-        return "cars";
-    }
+//    @GetMapping()
+//    public String getRestrictedQuantity(@RequestParam(name = "count", required = false, defaultValue = "5") int count, Model model) {
+//        model.addAttribute("cars", carService.getRestrictedQuantity(count));
+//        return "cars";
+//    }
 }
