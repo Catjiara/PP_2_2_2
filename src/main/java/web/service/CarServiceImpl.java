@@ -21,12 +21,7 @@ public class CarServiceImpl implements CarServise{
     }
 
     @Override
-    public List<Car> getAll() {
-        return this.cars;
-    }
-
-    @Override
-    public List<Car> getRestrictedQuantity(int count) {
-        return this.cars.stream().limit(count).collect(Collectors.toList());
+    public List<Car> getCarList(int count) {
+        return count == 0 ? this.cars : this.cars.stream().limit(count).collect(Collectors.toList());
     }
 }
